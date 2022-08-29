@@ -1,0 +1,57 @@
+import React from "react";
+import "./Header.scss";
+import HeaderOption from "./HeaderOption/HeaderOption";
+import { Search } from "@mui/icons-material";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import HomeIcon from "@mui/icons-material/Home";
+import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
+import WorkIcon from "@mui/icons-material/Work";
+import MessageIcon from "@mui/icons-material/Message";
+
+function Header() {
+	// Array of header option titles and icons, allowing for easier modifications in the future and reducing code redundancy
+	const headerOptions = [
+		{ icon: HomeIcon, title: "Home", active: true },
+		{ icon: SupervisorAccountIcon, title: "Profile" },
+		{ icon: WorkIcon, title: "Jobs" },
+		{ icon: MessageIcon, title: "Messages" },
+		{ icon: NotificationsIcon, title: "Notifications" },
+		{ title: "Me", avatar: "https://i.pravatar.cc/100" },
+	];
+
+	return (
+		<div className="main-container">
+			<div className="left-container">
+				<div className="logo">
+					<a href="/">
+						<img
+							className="logo-image"
+							src="https://img.icons8.com/fluency/52/000000/linkedin.png"
+							alt="LinkedIn Logo"
+						/>
+					</a>
+				</div>
+				<div className="search-bar">
+					<Search className="search-icon" />
+					<input type="text" name="search" id="search" placeholder="Search" />
+				</div>
+			</div>
+			<div className="right-container">
+				<div className="icon-list">
+					{headerOptions.map((option, index) => (
+						<HeaderOption
+							Icon={option.icon}
+							title={option.title}
+							avatar={option.avatar}
+							active={option.active}
+						/>
+					))}
+				</div>
+			</div>
+		</div>
+	);
+}
+
+export default Header;
+
+// https://docs.google.com/document/d/1f1rhiKbpxXZrByp62tac7YSk5gFB9n1oCu7XckHo67c/edit?usp=sharing

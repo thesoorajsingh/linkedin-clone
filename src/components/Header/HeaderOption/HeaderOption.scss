@@ -1,0 +1,34 @@
+.header-option {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	padding: 0 1.5rem;
+	cursor: pointer;
+	margin-top: 0.25rem;
+	transition: all 0.2s ease-in-out;
+	padding-bottom: 0.5rem;
+	color: gray;
+	&:hover {
+		color: #00a0e9;
+	}
+}
+
+.title {
+	font-size: 0.75rem;
+	font-weight: bold;
+}
+
+.icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	object-fit: contain;
+}
+
+.active {
+	color: #00a0e9;
+	padding-top: 0.25rem;
+	border-bottom: 4px solid #00a0e9;
+}
