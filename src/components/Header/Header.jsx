@@ -40,6 +40,7 @@ function Header() {
 				<div className="icon-list">
 					{headerOptions.map((option, index) => (
 						<HeaderOption
+							key={index}
 							Icon={option.icon}
 							title={option.title}
 							avatar={option.avatar}
