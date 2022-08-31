@@ -2,6 +2,7 @@
 	"name": "linkedin-clone",
 	"version": "0.1.0",
 	"private": true,
+	"homepage": "https://thesoorajsingh.github.io/linkedin-clone",
 	"dependencies": {
 		"@emotion/react": "^11.10.0",
 		"@emotion/styled": "^11.10.0",
@@ -16,6 +17,8 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},
@@ -38,6 +41,7 @@
 		]
 	},
 	"devDependencies": {
+		"gh-pages": "^4.0.0",
 		"node-sass": "^7.0.1",
 		"postcss": "^8.4.16",
 		"react-scripts": "5.0.1"
