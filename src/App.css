@@ -4,9 +4,12 @@
 	padding: 0;
 }
 
+.app {
+	background-color: #f3f2ef;
+}
+
 .app-body {
 	display: flex;
-	margin: 30px auto;
+	margin: 30px 15rem;
 	justify-content: center;
-	align-items: center;
 }

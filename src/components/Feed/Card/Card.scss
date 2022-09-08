@@ -1,0 +1,66 @@
+.card-container {
+	border: 0.1px solid rgba(0, 0, 0, 0.26);
+	margin: 1rem 0;
+	padding: 1rem;
+	border-radius: 5px;
+	background-color: #fff;
+	.name-container {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1rem;
+		.name {
+			font-size: 1.5rem;
+		}
+		.description-container {
+			display: flex;
+			flex-direction: column;
+			.description {
+				color: gray;
+			}
+		}
+		.avatar {
+			width: 2.5rem;
+			height: 2.5rem;
+			margin-right: 1rem;
+		}
+	}
+	.content {
+		font-size: 1.2rem;
+		flex-wrap: wrap;
+	}
+	.divider {
+		width: 100%;
+		margin: 1rem 0;
+	}
+
+	.buttons {
+		display: flex;
+		justify-content: space-between;
+		.button-container {
+			display: flex;
+			align-items: center;
+			padding: 1rem;
+			outline: none;
+			border: none;
+			&:hover {
+				cursor: pointer;
+				color: #00a0e9;
+				background-color: rgba(0, 0, 0, 0.1);
+			}
+			.button {
+				border: none;
+				outline: none;
+				background-color: transparent;
+				font-size: 1rem;
+				&:hover {
+					cursor: pointer;
+					color: #00a0e9;
+				}
+			}
+			.icon {
+				margin-right: 0.5rem;
+				cursor: pointer;
+			}
+		}
+	}
+}

@@ -1,0 +1,73 @@
+.feed {
+	flex: 0.5;
+}
+
+.create-post-card {
+	background-color: white;
+	border-radius: 5px;
+	padding: 20px;
+	.input-area {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		background-color: #fff;
+		width: 100%;
+		.avatar {
+			width: 50px;
+			height: 50px;
+			border: 2px solid #00a0e9;
+			margin-right: 1rem;
+		}
+		form {
+			border: 1px solid lightgray;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			padding: 1rem;
+			border-radius: 50px;
+			input {
+				border: none;
+				outline: none;
+				width: 100%;
+				margin: 0 1rem;
+				font-size: 1rem;
+				flex-grow: 1;
+				background-color: inherit;
+			}
+			.submit-button {
+				border: none;
+				outline: none;
+				background-color: inherit;
+			}
+			.send {
+				color: #00a0e9;
+				margin-left: 10px;
+				cursor: pointer;
+			}
+		}
+	}
+	.input-options {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		text-align: center;
+		margin: 0.5rem 0.5rem 0.25rem 0.5rem;
+		.input-option {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			color: gray;
+			transition: all 0.2s ease-in-out;
+			margin: 0.5rem;
+			cursor: pointer;
+			.input-option-icon {
+				font-size: 1.5rem;
+				margin-right: 0.5rem;
+			}
+			&:hover {
+				color: #00a0e9;
+			}
+		}
+	}
+}

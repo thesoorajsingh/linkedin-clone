@@ -5,6 +5,8 @@
 	display: flex;
 	justify-content: space-evenly;
 	border-bottom: 0.1px solid #ccc;
+	background-color: white;
+	z-index: 100;
 }
 
 .left-container {
@@ -40,5 +42,5 @@
 .icon-list {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 }
