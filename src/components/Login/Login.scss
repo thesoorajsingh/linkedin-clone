@@ -1,0 +1,41 @@
+.login-card {
+	width: 35%;
+	margin: 0 auto;
+	margin-top: 3rem;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #ccc;
+}
+
+.title-container {
+	font-size: 1.5rem;
+	text-decoration: underline;
+	text-decoration-color: #00a0e9;
+	text-decoration-thickness: 3px;
+	text-align: center;
+}
+
+.form {
+	margin: 1.5rem 0.5rem;
+	padding: 1rem;
+
+	.input-section {
+		margin: 1rem 0;
+	}
+}
+
+.submit-button {
+	margin: 1rem 0;
+	background-color: #00a0e9;
+}
+
+.register {
+	text-align: center;
+	margin-top: 1rem;
+	span {
+		color: blue;
+		cursor: pointer;
+		text-decoration: underline;
+	}
+}

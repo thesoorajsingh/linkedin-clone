@@ -2,9 +2,9 @@ import { Avatar } from "@mui/material";
 import React from "react";
 import "./HeaderOption.scss";
 
-function HeaderOption({ Icon, title, avatar, active }) {
+function HeaderOption({ Icon, title, avatar, active, logout }) {
 	return (
-		<div className={`header-option ${active && "active"}`}>
+		<div onClick={logout} className={`header-option ${active && "active"}`}>
 			{Icon && <Icon className="icon" />}
 			{avatar && (
 				<Avatar

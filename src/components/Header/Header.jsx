@@ -7,8 +7,12 @@ import HomeIcon from "@mui/icons-material/Home";
 import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import WorkIcon from "@mui/icons-material/Work";
 import MessageIcon from "@mui/icons-material/Message";
+import { logout } from "../../features/userSlice";
+import { useDispatch } from "react-redux";
+import { auth } from "../../utils/firebase";
 
 function Header() {
+	const dispatch = useDispatch();
 	// Array of header option titles and icons, allowing for easier modifications in the future and reducing code redundancy
 	const headerOptions = [
 		{ icon: HomeIcon, title: "Home", active: true },
@@ -16,7 +20,14 @@ function Header() {
 		{ icon: WorkIcon, title: "Jobs" },
 		{ icon: MessageIcon, title: "Messages" },
 		{ icon: NotificationsIcon, title: "Notifications" },
-		{ title: "Me", avatar: "https://i.pravatar.cc/100" },
+		{
+			title: "Me",
+			avatar: "https://i.pravatar.cc/100",
+			logout: function () {
+				dispatch(logout());
+				auth.signOut();
+			},
+		},
 	];
 
 	return (
@@ -45,6 +56,7 @@ function Header() {
 							title={option.title}
 							avatar={option.avatar}
 							active={option.active}
+							logout={option.logout}
 						/>
 					))}
 				</div>

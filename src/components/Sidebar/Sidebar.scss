@@ -1,15 +1,16 @@
 .sidebar {
 	position: sticky;
-	flex: 0.2;
-	top: 80px;
+	flex: 0.3;
+	top: 100px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+	align-items: center;
 	height: fit-content;
 }
 
 .profile-card {
-	max-width: 250px;
+	width: 250px;
 	border: 1px solid #c7c8ca;
 	border-radius: 20px;
 	background-color: #fff;
@@ -84,6 +85,7 @@
 }
 
 .recent-card {
+	width: 250px;
 	max-width: 250px;
 	background-color: white;
 	border: 1px solid #c7c8ca;

@@ -11,8 +11,11 @@ import firebase from "firebase/compat/app";
 import Card from "./Card/Card";
 import { useState } from "react";
 import { db } from "../../utils/firebase";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../features/userSlice";
 
 function Feed() {
+	const user = useSelector(selectUser);
 	const [posts, setPosts] = useState([]);
 	const [input, setInput] = useState("");
 
@@ -53,10 +56,10 @@ function Feed() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		db.collection("posts").add({
-			name: "Sooraj Singh",
-			description: "I love cows",
+			name: user.displayName,
+			description: "I love something placeholder",
 			message: input,
-			photoUrl: "",
+			photoUrl: user.photoUrl,
 			timestamp: firebase.firestore.FieldValue.serverTimestamp(),
 		});
 		setInput("");

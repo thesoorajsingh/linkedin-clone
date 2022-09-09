@@ -4,12 +4,14 @@
 	padding: 0;
 }
 
-.app {
+body {
 	background-color: #f3f2ef;
+	font-family: "Open Sans", sans-serif;
 }
 
 .app-body {
 	display: flex;
-	margin: 30px 15rem;
+	margin: 30px 10rem;
 	justify-content: center;
+	gap: 2rem;
 }
