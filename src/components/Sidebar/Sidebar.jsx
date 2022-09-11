@@ -1,18 +1,21 @@
 import { Avatar } from "@mui/material";
 import React from "react";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../features/userSlice";
 import "./Sidebar.scss";
 
 function Sidebar({ name, email }) {
+	const user = useSelector(selectUser);
 	return (
 		<div className="sidebar">
 			<div className="profile-card">
 				<div className="profile-data">
 					<img
-						src="https://picsum.photos/250/250"
+						src="https://images.unsplash.com/photo-1661927517192-8a1f7645fb33?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 						alt="background-banner"
 						className="bg-image"
 					/>
-					<Avatar className="avatar" src="https://i.pravatar.cc/100" />
+					<Avatar className="avatar" src={user.photoURL} />
 					<h2 className="name">{name}</h2>
 					<h4 className="email">{email}</h4>
 				</div>

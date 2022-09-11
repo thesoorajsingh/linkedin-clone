@@ -6,14 +6,14 @@ import CommentIcon from "@mui/icons-material/Comment";
 import SendIcon from "@mui/icons-material/Send";
 import IosShareIcon from "@mui/icons-material/IosShare";
 
-function Card({ name, description, message, photoUrl }) {
+function Card({ name, description, message, photoURL }) {
 	return (
 		<div className="card-container">
 			<div className="name-container">
-				<Avatar className="avatar" src={photoUrl} />
+				<Avatar className="avatar" src={photoURL} />
 				<div className="description-container">
 					<h2 className="name">{name}</h2>
-					<p className="description">{description}</p>
+					<p className="description">{"I love " + description}</p>
 				</div>
 			</div>
 			<div className="content">{message}</div>

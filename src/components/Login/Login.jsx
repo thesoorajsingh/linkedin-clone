@@ -11,6 +11,8 @@ function Login() {
 	const [password, setPassword] = React.useState("");
 	const [name, setName] = React.useState("");
 	const [profilePic, setProfilePic] = React.useState("");
+	const [description, setDescription] = React.useState("");
+	const [error, setError] = React.useState("");
 
 	const dispatch = useDispatch();
 
@@ -25,7 +27,9 @@ function Login() {
 						email: userAuth.user.email,
 						uid: userAuth.user.uid,
 						displayName: userAuth.user.displayName,
-						photoUrl: userAuth.user.photoURL,
+						photoURL:
+							userAuth.user.photoURL || "https://joeschmoe.io/api/v1/random",
+						description: userAuth.user.description,
 					})
 				);
 			})
@@ -38,7 +42,14 @@ function Login() {
 	const handleRegister = () => {
 		console.log("Register");
 		if (!name) {
+			setError("name");
 			return alert("Please enter a full name!");
+		} else if (password.length < 6) {
+			setError("password");
+			return alert("Password should be at least 6 characters long");
+		} else if (!description) {
+			setError("description");
+			return alert("Please enter a description");
 		}
 
 		auth
@@ -47,9 +58,8 @@ function Login() {
 				userAuth.user
 					.updateProfile({
 						displayName: name,
-						photoURL: profilePic
-							? profilePic
-							: "https://joeschmoe.io/api/v1/random",
+						photoURL: profilePic,
+						description: description,
 					})
 					.then(() => {
 						dispatch(
@@ -57,9 +67,8 @@ function Login() {
 								email: userAuth.user.email,
 								uid: userAuth.user.uid,
 								displayName: name,
-								photoURL: profilePic
-									? profilePic
-									: "https://joeschmoe.io/api/v1/random",
+								photoURL: profilePic || "https://joeschmoe.io/api/v1/random",
+								description: description,
 							})
 						);
 					})
@@ -114,12 +123,26 @@ function Login() {
 					<TextField
 						id="outlined-basic"
 						variant="outlined"
+						label="What's something you love?"
+						type="text"
+						fullWidth
+						autoComplete="off"
+						value={description}
+						onChange={(e) => setDescription(e.target.value)}
+					/>
+				</div>
+				<div className="input-section">
+					<TextField
+						id="outlined-basic"
+						variant="outlined"
 						label="Email"
 						type="email"
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
 						fullWidth
 						autoComplete="off"
+						error={error === "name"}
+						errortext={error === "name" ? "Please enter a valid email" : ""}
 					/>
 				</div>
 				<div className="input-section">
@@ -133,6 +156,12 @@ function Login() {
 						value={password}
 						onChange={(e) => setPassword(e.target.value)}
 						required
+						error={error === "password"}
+						errortext={
+							error === "password"
+								? "Password should be a minimum of 6 characters"
+								: ""
+						}
 					/>
 				</div>
 				<Button

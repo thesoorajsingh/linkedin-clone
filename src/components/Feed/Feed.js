@@ -57,9 +57,9 @@ function Feed() {
 		e.preventDefault();
 		db.collection("posts").add({
 			name: user.displayName,
-			description: "I love something placeholder",
+			description: user.description,
 			message: input,
-			photoUrl: user.photoUrl,
+			photoURL: user.photoURL,
 			timestamp: firebase.firestore.FieldValue.serverTimestamp(),
 		});
 		setInput("");
@@ -69,7 +69,11 @@ function Feed() {
 		<div className="feed">
 			<div className="create-post-card">
 				<div className="input-area">
-					<Avatar className="avatar" src="https://i.pravatar.cc/100" />
+					{!user ? (
+						<Avatar className="avatar" />
+					) : (
+						<Avatar src={user.photoURL} className="avatar" />
+					)}
 					<form onSubmit={handleSubmit}>
 						<Create />
 						<input
@@ -93,13 +97,13 @@ function Feed() {
 				</div>
 			</div>
 			<div className="posts">
-				{posts.map(({ id, data: { name, description, message, photoUrl } }) => (
+				{posts.map(({ id, data: { name, description, message, photoURL } }) => (
 					<Card
 						key={id}
 						name={name}
 						description={description}
 						message={message}
-						photoUrl={photoUrl}
+						photoURL={photoURL}
 					/>
 				))}
 			</div>
