@@ -129,6 +129,7 @@ function Login() {
 						autoComplete="off"
 						value={description}
 						onChange={(e) => setDescription(e.target.value)}
+						required
 					/>
 				</div>
 				<div className="input-section">
