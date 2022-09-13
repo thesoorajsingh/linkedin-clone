@@ -15,3 +15,14 @@ body {
 	justify-content: center;
 	gap: 2rem;
 }
+
+@media screen and (max-width: 768px) {
+	.app-body {
+		flex-direction: column;
+		margin: 30px 1rem;
+	}
+
+	.sidebar-component {
+		display: none;	
+	}
+}

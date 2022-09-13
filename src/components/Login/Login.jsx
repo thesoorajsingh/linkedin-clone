@@ -171,7 +171,7 @@ function Login() {
 					variant="contained"
 					endIcon={<LoginIcon />}
 				>
-					Submit
+					Login
 				</Button>
 
 				<p className="register">

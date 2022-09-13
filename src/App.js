@@ -43,9 +43,13 @@ function App() {
 					<Login />
 				) : (
 					<>
-						<Sidebar name={user.displayName} email={user.email} />
+						<Sidebar
+							className="sidebar-component"
+							name={user.displayName}
+							email={user.email}
+						/>
 						<Feed />
-						<NewsSection />
+						<NewsSection className="news-component" />
 					</>
 				)}
 			</div>

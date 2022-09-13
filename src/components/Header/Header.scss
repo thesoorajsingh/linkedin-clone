@@ -46,3 +46,34 @@
 	align-items: center;
 	justify-content: space-between;
 }
+
+.logout-responsive {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.logout-responsive {
+		cursor: pointer;
+		display: block;
+		position: absolute;
+		right: 10px;
+		top: 30%;
+	}
+	.right-container {
+		display: none;
+	}
+	.search-bar {
+		display: none;
+	}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: "Open Sans";
+	}
+	.logo-image {
+		width: 150px;
+		height: 60px;
+	}
+}

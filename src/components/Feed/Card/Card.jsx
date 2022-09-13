@@ -21,19 +21,19 @@ function Card({ name, description, message, photoURL }) {
 			<div className="buttons">
 				<div className="button-container">
 					<ThumbUpIcon className="icon" />
-					<button className="button">Like</button>
+					{window.innerWidth > 768 && <div className="button">Like</div>}
 				</div>
 				<div className="button-container">
 					<CommentIcon className="icon" />
-					<button className="button">Comment</button>
+					{window.innerWidth > 768 && <div className="button">Comment</div>}
 				</div>
 				<div className="button-container">
 					<IosShareIcon className="icon" />
-					<button className="button">Share</button>
+					{window.innerWidth > 768 && <div className="button">Share</div>}
 				</div>
 				<div className="button-container">
 					<SendIcon className="icon" />
-					<button className="button">Send</button>
+					{window.innerWidth > 768 && <div className="button">Send</div>}
 				</div>
 			</div>
 		</div>

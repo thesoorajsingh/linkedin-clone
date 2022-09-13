@@ -52,15 +52,34 @@
 				outline: none;
 				background-color: transparent;
 				font-size: 1rem;
-				&:hover {
-					cursor: pointer;
-					color: #00a0e9;
-				}
 			}
 			.icon {
 				margin-right: 0.5rem;
 				cursor: pointer;
 			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.card-container {
+		padding: 0.5rem;
+		.buttons {
+			.button-container {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				.button {
+					font-size: 12px;
+				}
+				.icon {
+					font-size: 1.5rem;
+					margin-right: 0.25rem;
+				}
+			}
+		}
+		.icon {
+			margin-right: 0.25rem;
 		}
 	}
 }

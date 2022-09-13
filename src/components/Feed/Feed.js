@@ -91,7 +91,7 @@ function Feed() {
 					{inputOptions.map((option, index) => (
 						<div key={index} className="input-option">
 							{option.icon}
-							<h4>{option.title}</h4>
+							{window.innerWidth > 768 && <h4>{option.title}</h4>}
 						</div>
 					))}
 				</div>

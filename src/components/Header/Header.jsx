@@ -10,6 +10,7 @@ import MessageIcon from "@mui/icons-material/Message";
 import { logout, selectUser } from "../../features/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../utils/firebase";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 function Header() {
 	const dispatch = useDispatch();
@@ -31,6 +32,8 @@ function Header() {
 		},
 	];
 
+	console.log(window.innerWidth);
+
 	return (
 		<div className="main-container">
 			<div className="left-container">
@@ -38,7 +41,11 @@ function Header() {
 					<a href="/">
 						<img
 							className="logo-image"
-							src="https://img.icons8.com/fluency/52/000000/linkedin.png"
+							src={
+								window.innerWidth < 768
+									? `https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/1920px-LinkedIn_Logo.svg.png?20170711102837`
+									: `https://img.icons8.com/fluency/52/000000/linkedin.png`
+							}
 							alt="LinkedIn Logo"
 						/>
 					</a>
@@ -61,6 +68,9 @@ function Header() {
 						/>
 					))}
 				</div>
+			</div>
+			<div className="logout-responsive">
+				{user && <LogoutIcon onClick={() => auth.signOut()} />}
 			</div>
 		</div>
 	);

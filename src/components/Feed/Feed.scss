@@ -25,7 +25,7 @@
 			justify-content: space-between;
 			align-items: center;
 			width: 100%;
-			padding: 1rem;
+			padding: 0.25rem 0.75rem;
 			border-radius: 50px;
 			input {
 				border: none;
@@ -69,6 +69,18 @@
 			&:hover {
 				color: #00a0e9;
 			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.feed {
+		flex: 1;
+	}
+	.input-option {
+		font-size: 0.75rem;
+		.input-option-icon {
+			font-size: 1rem;
 		}
 	}
 }
